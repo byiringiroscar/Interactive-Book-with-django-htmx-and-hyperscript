@@ -8,7 +8,9 @@ def index(request):
         if form.is_valid():
             form.save()
             context = {'form': BookForm()}
-            return render(request, 'partials/bookform.html',context)
+            response = render(request, 'partials/bookform.html',context)
+            response['HX-Trigger'] = 'bookAdded'
+            return response
         context = {'form': form}
         return render(request, 'partials/bookform.html',context)
     context = {

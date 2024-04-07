@@ -6,7 +6,7 @@
     hx-post="{% url 'index' %}"
     hx-target="#add-book-form"
     hx-swap="outerHTML"
-    _="on htmx:afterRequest remove .hidden from #add-book-btn"
+    _="on bookAdded remove .hidden from #add-book-btn"
     >
         <div class="mb-4">
             {{ form.name|add_label_class:"block text-gray-700 text-sm font-bold mb-2" }}
@@ -21,7 +21,9 @@
 
 
         <div class="flex justify-end">
-            <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mb-4 mr-2" type="button">Cancer</button>
+            <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mb-4 mr-2" type="button"
+            _="on click add .hidden to #add-book-form then remove .hidden from #add-book-btn"
+            >Cancel</button>
             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4" type="submit">Add Book</button>
         </div>
     </form>
