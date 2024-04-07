@@ -1,4 +1,4 @@
-<ul id="book-list">
+<ul id="book-list" hx-get="{% url 'books' %}" hx-trigger="bookAdded from:body" hx-swap="outerHTML">
     {% for book in books %}
         <li>{{ book.name }}</li>
     {% endfor %}

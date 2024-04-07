@@ -19,3 +19,9 @@ def index(request):
         'books': Book.objects.all()
     }
     return render(request, 'index.html', context)
+
+def books(request):
+    context = {
+        'books': Book.objects.all()
+    }
+    return render(request, 'partials/booklist.html', context)
