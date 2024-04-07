@@ -1,0 +1,23 @@
+{% load widget_tweaks %}
+
+
+<div id="add-book-form">
+    <form action="">
+        <div class="mb-4">
+            {{ form.name.label }}
+            {% render_field form.name %}
+            {{ form.name.errors }}
+        </div>
+        <div class="mb-4">
+            {{ form.author.label }}
+            {% render_field form.author %}
+            {{ form.author.errors }}
+        </div>
+
+
+        <div class="flex justify-end">
+            <button type="button">Cancer</button>
+            <button type="button">Add Book</button>
+        </div>
+    </form>
+</div>
