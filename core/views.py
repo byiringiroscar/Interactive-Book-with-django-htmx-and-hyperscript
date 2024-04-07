@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from core.forms import BookForm
+from core.models import Book
 
 # Create your views here.
 def index(request):
@@ -14,6 +15,7 @@ def index(request):
         context = {'form': form}
         return render(request, 'partials/bookform.html',context)
     context = {
-        'form': BookForm()
+        'form': BookForm(),
+        'books': Book.objects.all()
     }
     return render(request, 'index.html', context)
