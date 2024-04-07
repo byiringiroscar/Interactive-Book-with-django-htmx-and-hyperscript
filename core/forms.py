@@ -10,7 +10,7 @@ class BookForm(forms.ModelForm):
 
     
     def clean_name(self):
-        name = self.changed_data['name']
+        name = self.cleaned_data['name']
         if name.startswith('a'):
             raise forms.ValidationError("Error: we don't want people whose name starts with a")
         
