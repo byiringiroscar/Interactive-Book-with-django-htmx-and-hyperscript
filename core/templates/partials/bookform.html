@@ -6,6 +6,7 @@
     hx-post="{% url 'index' %}"
     hx-target="#add-book-form"
     hx-swap="outerHTML"
+    _="on htmx:afterRequest remove .hidden from #add-book-btn"
     >
         <div class="mb-4">
             {{ form.name|add_label_class:"block text-gray-700 text-sm font-bold mb-2" }}
